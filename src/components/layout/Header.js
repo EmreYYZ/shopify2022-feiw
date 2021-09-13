@@ -2,9 +2,9 @@ import React from "react";
 
 export const Header = () => {
   return (
-    <header>
-      <h1>Spacestagram</h1>
-      <p>Image-sharing from the final frontier</p>
+    <header className="mb-4">
+      <h1 className="text-2xl font-bold">Spacestagram</h1>
+      <p className="text-gray-600 font-light">Image-sharing from the final frontier</p>
     </header>
   );
 };
