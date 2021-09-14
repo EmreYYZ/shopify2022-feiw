@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import { v4 as uuidv4 } from "uuid";
+import { PostCard } from "./PostCard";
 export const Posts = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState([true]);
@@ -12,6 +13,7 @@ export const Posts = () => {
       .then((data) => {
         setPosts(data);
         setLoading(false);
+        console.log(data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -28,7 +30,16 @@ export const Posts = () => {
     <div>
       <p>Posts</p>
       {posts.map((post) => (
-        <p>{post.title}</p>
+        <PostCard
+          key={uuidv4()}
+          title={post.title}
+          date={post.date}
+          description={post.explanation}
+          mediaType={post.media_type}
+          imageSD={post.url}
+          imageHD={post.hdurl}
+          author={post.copyright}
+        />
       ))}
     </div>
   );
