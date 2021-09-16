@@ -5,7 +5,7 @@ import { PostDescription } from "./PostDescription";
 import { PostImage } from "./PostImage";
 import { PostVideo } from "./PostVideo";
 
-export const PostCard = ({ title, author, description, date, mediaType, imageSD, imageHD }) => {
+export const PostCard = ({ likedPosts, setLikedPosts, title, author, description, date, mediaType, imageSD, imageHD }) => {
   if (author === undefined) {
     author = "A random space scientist.";
   }
@@ -16,7 +16,17 @@ export const PostCard = ({ title, author, description, date, mediaType, imageSD,
       <p>{date}</p>
       <p>{author}</p>
       {mediaType === "image" ? <PostImage imageHD={imageHD} title={title} imageSD={imageSD} /> : <PostVideo videoURL={imageSD} title={title} />}
-      <LikeButton />
+      <LikeButton
+        likedPosts={likedPosts}
+        setLikedPosts={setLikedPosts}
+        title={title}
+        date={date}
+        description={description}
+        author={author}
+        mediaType={mediaType}
+        imageHD={imageHD}
+        imageSD={imageSD}
+      />
       <PostDescription description={description} />
       <Avatar author={author} date={date} />
     </article>

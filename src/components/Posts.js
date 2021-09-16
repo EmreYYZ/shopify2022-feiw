@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { PostCard } from "./PostCard";
-export const Posts = () => {
+export const Posts = ({ likedPosts, setLikedPosts }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState([true]);
 
@@ -13,7 +13,6 @@ export const Posts = () => {
       .then((data) => {
         setPosts(data);
         setLoading(false);
-        console.log(data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -21,7 +20,7 @@ export const Posts = () => {
   if (loading) {
     return (
       <section>
-        <p>Loading the posts from NASA's Space Servers</p>
+        <p>Loading the posts from NASA's Space Servers, this can take a bit of time.</p>
       </section>
     );
   }
@@ -31,6 +30,8 @@ export const Posts = () => {
       <p>Posts</p>
       {posts.map((post) => (
         <PostCard
+          likedPosts={likedPosts}
+          setLikedPosts={setLikedPosts}
           key={uuidv4()}
           title={post.title}
           date={post.date}
