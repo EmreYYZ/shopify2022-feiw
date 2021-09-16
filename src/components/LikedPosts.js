@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { PostCard } from "./PostCard";
-
+import { Helmet } from "react-helmet";
 export const LikedPosts = ({ likedPosts, setLikedPosts }) => {
   const [posts, setPosts] = useState([]);
 
@@ -12,11 +12,21 @@ export const LikedPosts = ({ likedPosts, setLikedPosts }) => {
   }, []);
 
   if (allPosts.length === 0) {
-    return <p>You don't have any liked posts yet. Like some posts and come back!</p>;
+    return (
+      <>
+        <Helmet>
+          <title>Likes | 🪐 Spacestagram</title>
+        </Helmet>
+        <p>You don't have any liked posts yet. Like some posts and come back!</p>
+      </>
+    );
   }
+
   return (
     <div>
-      <p>Liked posts will be here</p>
+      <Helmet>
+        <title>Likes | 🪐 Spacestagram</title>
+      </Helmet>
       {allPosts.map((post) => (
         <>
           <PostCard
