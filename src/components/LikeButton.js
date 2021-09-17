@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 export const LikeButton = ({ likedPosts, setLikedPosts, title, date, description, author, mediaType, imageHD, imageSD }) => {
   const [liked, setLiked] = useState(false);
 
+  // Save post to local storage
   const saveToLocal = (post) => {
     let currentStorage = JSON.parse(localStorage.getItem("likedPosts"));
     currentStorage.push(post);
@@ -10,13 +11,14 @@ export const LikeButton = ({ likedPosts, setLikedPosts, title, date, description
     localStorage.setItem("likedPosts", JSON.stringify(currentStorage));
   };
 
+  // Remove post from localStorage
   const removeFromLocal = (post) => {
     let currentStorage = JSON.parse(localStorage.getItem("likedPosts"));
     let updatedLikedPosts = currentStorage.filter((eachPost) => eachPost.id !== post.id);
     setLikedPosts(updatedLikedPosts);
     localStorage.setItem("likedPosts", JSON.stringify(updatedLikedPosts));
   };
-
+  // check if the post exists in localStorage
   const checkIfExists = () => {
     return likedPosts.some((likedPost) => likedPost.id === title + date);
   };
