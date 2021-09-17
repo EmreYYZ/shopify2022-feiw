@@ -2,9 +2,8 @@ import React from "react";
 
 export const PostVideo = ({ videoURL, title }) => {
   return (
-    <div>
-      <p>Video Content</p>
-      <iframe title={title} width="420" height="315" src={videoURL}></iframe>
+    <div className="aspect-w-16 aspect-h-9">
+      <iframe title={title} src={videoURL}></iframe>
     </div>
   );
 };

@@ -5,7 +5,7 @@ export const PostDescription = ({ description }) => {
 
   if (isExcerpt) {
     return (
-      <section className="p-4 bg-gray-100 text-justify">
+      <section className="px-4 pb-4 bg-gray-100 text-justify">
         <p>{description.substring(0, 170)}...</p>
         <div className="text-right">
           <button className="btn animation mt-4 bg-gray-900 text-gray-50 hover:bg-gray-600" onClick={() => setIsExcerpt(false)}>
@@ -17,7 +17,7 @@ export const PostDescription = ({ description }) => {
   }
 
   return (
-    <section className="p-4 bg-gray-100 text-justify">
+    <section className="px-4 pb-4 bg-gray-100 text-justify">
       <p>{description}</p>
       <div className="text-right">
         <button className="btn animation rounded-lg mt-4 bg-gray-900 hover:bg-gray-600 text-gray-50" onClick={() => setIsExcerpt(true)}>

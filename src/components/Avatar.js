@@ -2,7 +2,7 @@ import React from "react";
 
 export const Avatar = ({ author, date }) => {
   return (
-    <picture className="mr-3">
+    <picture className="w-16 h-16">
       {author === "A random scientist." ? (
         <img
           className="rounded-full w-16 h-16 border-2 border-gray-900 bg-pink-200"
