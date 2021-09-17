@@ -27,7 +27,6 @@ export const Posts = ({ likedPosts, setLikedPosts }) => {
 
   return (
     <div>
-      <p>Posts</p>
       {posts.map((post) => (
         <PostCard
           likedPosts={likedPosts}
