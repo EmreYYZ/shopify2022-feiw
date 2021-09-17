@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { PostCard } from "./PostCard";
 import { useParams } from "react-router";
+import { Helmet } from "react-helmet";
 
 export const SinglePost = ({ likedPosts, setLikedPosts }) => {
   const [post, setPost] = useState({});
@@ -30,6 +31,9 @@ export const SinglePost = ({ likedPosts, setLikedPosts }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{post.title} | 🪐 Spacestagram</title>
+      </Helmet>
       <PostCard
         likedPosts={likedPosts}
         setLikedPosts={setLikedPosts}
