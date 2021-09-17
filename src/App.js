@@ -4,7 +4,7 @@ import { Posts } from "./components/Posts";
 import { useState, useEffect } from "react";
 import { LikedPosts } from "./components/LikedPosts";
 import { SinglePost } from "./components/SinglePost";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   const [likedPosts, setLikedPosts] = useState([]);
@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <HashRouter>
       <Layout>
         <Helmet>
           <title>🪐 Spacestagram</title>
@@ -34,7 +34,7 @@ function App() {
           </Route>
         </Switch>
       </Layout>
-    </Router>
+    </HashRouter>
   );
 }
 
