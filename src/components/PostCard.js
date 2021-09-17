@@ -4,6 +4,7 @@ import { LikeButton } from "./LikeButton";
 import { PostDescription } from "./PostDescription";
 import { PostImage } from "./PostImage";
 import { PostVideo } from "./PostVideo";
+import { SharePost } from "./SharePost";
 
 export const PostCard = ({ likedPosts, setLikedPosts, title, author, description, date, mediaType, imageSD, imageHD }) => {
   if (author === undefined) {
@@ -27,6 +28,7 @@ export const PostCard = ({ likedPosts, setLikedPosts, title, author, description
         imageHD={imageHD}
         imageSD={imageSD}
       />
+      <SharePost date={date} />
       <PostDescription description={description} />
       <Avatar author={author} date={date} />
     </article>
