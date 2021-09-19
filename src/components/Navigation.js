@@ -16,7 +16,7 @@ export const Navigation = () => {
           </svg>
           <li>Home</li>
         </Link>
-        <Link className="flex items-center justify-center hover:text-gray-800" to="/likes">
+        <Link className="flex items-center mr-4 fijustify-center hover:text-gray-800" to="/likes">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-1 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
               strokeLinecap="round"
@@ -27,6 +27,15 @@ export const Navigation = () => {
           </svg>
           <li>Likes</li>
         </Link>
+        <a
+          href="https://github.com/EmreYYZ/shopify2022-feiw"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center justify-center hover:text-gray-800"
+          to="/likes"
+        >
+          <li>Source Code on Github</li>
+        </a>
       </ul>
     </nav>
   );
