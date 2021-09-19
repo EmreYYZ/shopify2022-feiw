@@ -26,12 +26,10 @@ React, Tailwind CSS
 - Programmatically generated [Robohash](https://robohash.org/) avatars.
 - Supports both Video and Image media type.
 - Buttons to switch between SD or HD quality for images.
+- Users can share the posts, each post has a unique share url.
+- Users can like and dislike posts, view their likes on their "Likes" page.
 
 ## How to use
 
 - Clone repo.
 - Open the folder in Terminal and `npm start`.
-
-## TODO
-
-- Full width responsive video with Tailwind Aspect Ratio Plugin
